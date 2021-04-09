@@ -8,7 +8,7 @@ namespace Sorting
             HelpMergeSort(arr, 0, arr.Length-1);
         }
 
-        // Recursive divides array in smaller parts and calls HelpMerge method
+        // Recursively divides array in smaller parts and calls HelpMerge method
         private static void HelpMergeSort(int[] arr, int firstIndex, int lastIndex) 
         {
             if(firstIndex < lastIndex)
