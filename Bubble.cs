@@ -17,5 +17,47 @@ namespace Sorting
                 }
             }
         }
+
+        // Another version of bubble sort
+        public static void BubblesortEasy(int[] arr)
+        {
+            bool switched = false;
+            do
+            {
+                switched = false;
+                for(int i = 1; i<arr.Length; i++)
+                {
+                    if(arr[i-1] > arr[i])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[i-1];
+                        arr[i-1] = temp;
+                        switched = true;
+                    }
+                }
+            } while(switched);
+        }
+
+        // Yet another implementation of bubble sort
+        public static void OptimizedBubbleSort(int[] arr)
+        {
+            bool switched = false;
+            int n = arr.Length;
+            do
+            {
+                switched = false;
+                for(int i = 1; i<n; i++)
+                {
+                    if(arr[i-1] > arr[i])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[i-1];
+                        arr[i-1] = temp;
+                        switched = true;
+                    }
+                }
+                n--;
+            } while(switched);
+        }
     }
 }
