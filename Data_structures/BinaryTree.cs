@@ -20,7 +20,7 @@ namespace Sorting
         public Node root = null;
         
         // Traversing tree using different techniques
-        public void PreOrderTraversal(Node node)
+        private void PreOrderTraversal(Node node)
         {
             if(node != null)
             {
@@ -30,7 +30,12 @@ namespace Sorting
             }
         }
 
-        public void InOrderTraversal(Node node)
+        public void PreOrderTraversal()
+        {
+            PreOrderTraversal(root);
+        }
+
+        private void InOrderTraversal(Node node)
         {
             if(node != null)
             {
@@ -40,7 +45,12 @@ namespace Sorting
             }
         }
 
-        public void PostOrderTraversal(Node node)
+        public void InOrderTraversal()
+        {
+            this.InOrderTraversal(root);
+        }
+
+        private void PostOrderTraversal(Node node)
         {
             if(node != null)
             {
@@ -50,7 +60,13 @@ namespace Sorting
             }
         }
 
-        public Node InsertRecursive(int data, Node node)
+        public void PostOrderTraversal()
+        {
+            this.PostOrderTraversal(root);
+        }
+
+
+        private Node InsertFromNode(int data, Node node)
         {
             if(node == null)
             {
@@ -58,23 +74,23 @@ namespace Sorting
             }
             if(data > node.data)
             {
-                node.right = InsertRecursive(data, node.right);
+                node.right = InsertFromNode(data, node.right);
             }
             else if(data < node.data)
             {
-                node.left = InsertRecursive(data, node.left);
+                node.left = InsertFromNode(data, node.left);
             }
             return node;
         }
 
-        public Node InsertFromRoot(int data)
+        public Node Insert(int data)
         {
             if(this.root == null)
             {
                 root = new Node(data);
                 return root;
             }
-            return InsertRecursive(data, root);
+            return InsertFromNode(data, root);
         }
 
         public Node Search(int data, Node node)
