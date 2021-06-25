@@ -34,9 +34,9 @@ namespace Sorting
         {
             if(node != null)
             {
-                PreOrderTraversal(node.left);
+                InOrderTraversal(node.left);
                 Console.WriteLine(node.data);
-                PreOrderTraversal(node.right);
+                InOrderTraversal(node.right);
             }
         }
 
@@ -44,8 +44,8 @@ namespace Sorting
         {
             if(node != null)
             {
-                PreOrderTraversal(node.left);
-                PreOrderTraversal(node.right);
+                PostOrderTraversal(node.left);
+                PostOrderTraversal(node.right);
                 Console.WriteLine(node.data);
             }
         }
